@@ -36,7 +36,7 @@ scp.send = function (options, cb) {
 scp.get = function (options, cb) {
   var command = [
     'scp',
-    (options.keyfile == undefined ? '' : '-i ' + options.keyfile),
+    (options.keyfile == undefined ? '' : '-o StrictHostKeyChecking=no -i ' + options.keyfile),
     '-r',
     '-P',
     (options.port == undefined ? '22' : options.port),
