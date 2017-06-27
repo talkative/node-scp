@@ -12,7 +12,7 @@ var scp = module.exports = {};
 scp.send = function (options, cb) {
   var command = [
     'scp',
-    (options.keyfile == undefined ? '' : '-i ' + options.keyfile),
+    (options.keyfile == undefined ? '' : '-o CheckHostIP=no -i ' + options.keyfile),
     '-r',
     '-P',
     (options.port == undefined ? '22' : options.port),
